@@ -78,7 +78,7 @@ function SignIn({ user_Department }){
         const res = await fetch(`${server}/api/admin/signin/`,{
             method: "POST",
             headers: { "Content-Type": "application/json",},
-            body:JSON.stringify({role_id:result.role_id, username:result.username, password:hashedPassword, email:result.email, PhoneNum:result.PhoneNum, /*dob:startDate,*/ department:result.department, position:result.position, role:"User", status:"Active"}),
+            body:JSON.stringify({role_id:result.role_id, username:result.username, password:result.password, email:result.email, PhoneNum:result.PhoneNum, department:p_selected[0].value, position:user_Designation[0].value, role:"User", status:"Active"}),
         })
         const data=await res.json()
 
